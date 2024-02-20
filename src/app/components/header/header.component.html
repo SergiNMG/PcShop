@@ -1,0 +1,25 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffe2f4;">
+        <a class="navbar-brand">PC Shop</a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/index">Index</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/proveedores">Proveedores</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <select class="form-select-lg" [(ngModel)]="selectValue" (change)="navigateTo(selectValue)">
+                <option value="/producto1">Todos los productos</option>
+                <option value="/producto2">Buscar por posición</option>
+                <option value="/producto3">Crud de productos</option>
+            </select>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,32 @@
+<h3 class="text-primary text-center">Tabla de productos: </h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Componente</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of productos">
+            <td>{{producto.id}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.componente}}</td>
+            <td>{{producto.descripcion}}</td>
+            <td>{{producto.precio}}</td>
+
+            <td>
+                <button class="btn btn-primary" routerLink="/productos/{{producto.id}}">Ver</button>
+            </td>
+
+            <td>
+                <button class="btn btn-secondary" (click)="eliminar(producto.id)">Borrar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="text-center">
+    <button class="btn btn-success">Añadir</button>
+</div>

@@ -1,0 +1,24 @@
+{
+    "proveedores": [
+        {
+            "id": 1,
+            "nombre": "MSI",
+            "sede": "Barcelona"
+        },
+        {
+            "id": 2,
+            "nombre": "Gigabyte",
+            "sede": "Barcelona"
+        },
+        {
+            "id": 3,
+            "nombre": "AMD",
+            "sede": "Madrid"
+        },
+        {
+            "id": 4,
+            "nombre": "Intel",
+            "sede": "Madrid"
+        }
+    ]
+}

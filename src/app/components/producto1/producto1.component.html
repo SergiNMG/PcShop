@@ -1,0 +1,12 @@
+<div class="d-flex flex-wrap">
+    <div *ngFor="let producto of productos" class="card d-flex flex-column w-25">
+        <img src="../../assets/{{producto.id}}.png" class="card-img-top" />
+        <div class="card-body">
+            <h5 class="card-title">{{producto.nombre}}</h5>
+            <p class="card-text">{{producto.descripcion}}</p>
+            <b>
+                <p class="card-text text-center">{{producto.precio}}</p>
+            </b>
+        </div>
+    </div>
+</div>

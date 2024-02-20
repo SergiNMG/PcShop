@@ -1,0 +1,40 @@
+<div class="alert alert-primary mt-5 text-center" role="alert">
+    <h3 class="text-center">Seleccionar producto por posición</h3>
+    <div class="d-inline-block">
+        <table class="mx-auto">
+            <tr>
+                <td>Posicion: </td>
+                <td><input type="text" [(ngModel)]="posicion"></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="findProduct(posicion)">Buscar</button>
+</div>
+<div class="text-center">
+    <div *ngIf="producto">
+        <app-producto [producto]="producto"></app-producto>
+
+        <div class="d-inline-block">
+            <table class="mx-auto">
+                <tr>
+                    <td>Nombre:</td>
+                    <td><input type="text" [(ngModel)]="producto.nombre"></td>
+                </tr>
+                <tr>
+                    <td>Descripción:</td>
+                    <td><input type="text" [(ngModel)]="producto.componente"></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div class="alert alert-warning mt-5 text-center" role="alert">
+            <h3 class="text-center">Seleccionar producto por nombre</h3>
+            <select [(ngModel)]="productoSeleccionado" (change)="selectProduct()">
+                <option *ngFor="let producto of productos">
+                    {{producto.nombre}}
+                </option>
+            </select>
+        </div>
+    </div>
+</div>

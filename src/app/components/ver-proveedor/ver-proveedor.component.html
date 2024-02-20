@@ -1,0 +1,26 @@
+<h2 class="text-center text-primary">Información del proveedor</h2>
+
+<div class="alert alert-primary mt-5 text-center" role="alert">
+    <h3 class="text-center">Proveedor Seleccionado: </h3>
+    <div class="d-inline-block">
+        <table class="mx-auto">
+            <tr>
+                <td>Id: </td>
+                <td><input type="number" [(ngModel)]="proveedor.id" readonly></td>
+            </tr>
+            <tr>
+                <td>Nombre: </td>
+                <td><input type="text" [(ngModel)]="proveedor.nombre"></td>
+            </tr>
+            <tr>
+                <td>Sede: </td>
+                <td><input type="text" [(ngModel)]="proveedor.sede"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary m-1" (click)="putProveedor()">Modificar</button>
+        <button class="btn btn-danger m-1" (click)="delete(proveedor.id)">Borrar</button>
+        <button class="btn btn-secondary m-1" routerLink="/proveedores">Volver</button>
+    </div>
+</div>
