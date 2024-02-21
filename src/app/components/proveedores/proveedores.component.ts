@@ -20,4 +20,15 @@ export class ProveedoresComponent implements OnInit {
         error: error => console.log(`Error: ${error.status} ${error.statusText}`)
       });
   }
+  
+  delete(id: number){
+    this.proveedorService.deleteProveedor(id)
+    .subscribe({
+      next: data => {
+        console.log(data);
+        this.ngOnInit();
+      },
+      error: error => `Error: ${error.status} ${error.statusText}`
+    });
+  }
 }

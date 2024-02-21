@@ -23,8 +23,12 @@ export class ProveedorHTTPService {
   }
 
   putProveedor(proveedor: Proveedor): Observable<Proveedor> {
-    return this.httpService.put<Proveedor>(this.url, proveedor)
+    return this.httpService.put<Proveedor>(this.url + '/' + proveedor.id, proveedor)
       .pipe(retry(1));
+  }
+
+  postProveedor(proveedor: Proveedor): Observable<Proveedor> {
+    return this.httpService.post<Proveedor>(this.url, proveedor);
   }
 
   deleteProveedor(id: number): Observable<Proveedor[]> {

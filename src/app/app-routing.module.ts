@@ -8,6 +8,8 @@ import { Producto3Component } from './components/producto3/producto3.component';
 import { VerProductoComponent } from './components/ver-producto/ver-producto.component';
 import { ProveedoresComponent } from './components/proveedores/proveedores.component';
 import { VerProveedorComponent } from './components/ver-proveedor/ver-proveedor.component';
+import { AddProveedorComponent } from './components/add-proveedor/add-proveedor.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +19,9 @@ const routes: Routes = [
   { path: 'producto3', component: Producto3Component },
   { path: 'productos/:id', component: VerProductoComponent },
   { path: 'proveedores', component: ProveedoresComponent },
-  { path: 'proveedores/:id', component: VerProveedorComponent }
+  { path: 'proveedores/:id', component: VerProveedorComponent },
+  { path: 'addProveedor', component: AddProveedorComponent },
+  { path: 'trabajadores', component: AppComponent }
 ];
 
 @NgModule({

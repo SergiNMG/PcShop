@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Proveedor } from 'src/app/models/proveedor';
 import { ProveedorHTTPService } from 'src/app/services/proveedor-http.service';
 
@@ -18,7 +18,8 @@ export class VerProveedorComponent implements OnInit {
   };
 
   constructor(private activatedRoute: ActivatedRoute,
-    private proveedorService: ProveedorHTTPService) { }
+    private proveedorService: ProveedorHTTPService,
+    private router: Router) { }
 
   ngOnInit() {
     let id: number = this.activatedRoute.snapshot.params['id'];
@@ -33,7 +34,8 @@ export class VerProveedorComponent implements OnInit {
       next: data => {
         console.log(data);
 
-        this.proveedorService.getProveedores().subscribe(data => this.proveedores = data)
+        this.proveedorService.getProveedores().subscribe(data => this.proveedores = data);
+        this.navigateTo('/proveedores')
       },
       error: error => console.log(`Error ${error.status} ${error.statusText}`)
     })
@@ -47,5 +49,9 @@ export class VerProveedorComponent implements OnInit {
       },
       error: error => console.log(`Error ${error.status} ${error.statusText}`)
     })
+  }
+
+  navigateTo(route: string){
+    this.router.navigate([route]);
   }
 }

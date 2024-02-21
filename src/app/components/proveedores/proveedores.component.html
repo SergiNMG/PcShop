@@ -20,8 +20,11 @@
             </td>
 
             <td>
-                <button class="btn btn-secondary">Borrar</button>
+                <button class="btn btn-secondary" (click)="delete(proveedor.id)">Borrar</button>
             </td>
         </tr>
     </tbody>
 </table>
+<div class="text-center">
+    <button class="btn btn-success" routerLink="/addProveedor">Agregar</button>
+</div>

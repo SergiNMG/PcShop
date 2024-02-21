@@ -1,2 +1,11 @@
 <app-header></app-header>
+
+<!-- interpolar la variable titulo en el h3 -->
+<h3 align="center"> {{titleTrabajadores}} </h3><br>
+<div class="row row-cols-1 row-cols-md-6">
+    <app-trabajador *ngFor="let trabajador of trabajadores" [trabajador]="trabajador"
+        (eliminarTabajador)="borrar($event)" (likeTrabajador)="sumaVoto($event)"
+        (unlikeTrabajador)="restaVoto($event)"></app-trabajador>
+</div>
+
 <router-outlet></router-outlet>

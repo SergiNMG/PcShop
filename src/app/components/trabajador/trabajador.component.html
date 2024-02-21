@@ -1,0 +1,33 @@
+<div class="col mb-6" *ngIf="trabajador">
+
+    <div class="card h-100">
+        <!--Card image-->
+        <div class="view overlay">
+            <img class="card-img-top" src="../../../assets/clientes/{{trabajador.id}}.jpg" alt="Card image cap">
+            <!-- completar src con la foto del trabajador -->
+            <a href="#!">
+                <div class="mask rgba-white-slight"></div>
+            </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+
+            <!--Title-->
+            <h4 class="card-title"> {{trabajador.nombre}} </h4> <!-- Mostrar nombre del trabajador -->
+            <h4>{{trabajador.cargo}}</h4> <!-- Mostrar cargo del trabajador -->
+            <!--Text-->
+            <p class="card-text">Votos: {{trabajador.votos}}</p>
+            <!-- Mostrar votos del trabajador -->
+            <img src="../../../assets/clientes/like.jpg" (click)="like(trabajador)">
+            <!-- Mostrar en src imagen like.jpg   y llamar a funcion like   con el id del trabajador -->
+            <img src="../../../assets/clientes/unlike.jpg" (click)="unlike(trabajador)">
+            <!-- Mostrar en src imagen unlike.jpg y llamar a funcion unlike con el id del trabajador -->
+        </div>
+        <div class="text-center">
+            <button type="button" class="btn btn-danger" (click)="eliminar(trabajador)">Borrar Trabajador</button>
+            <!--llamar a funcion eliminar con el id del trabajador -->
+        </div>
+
+    </div>
+</div>
